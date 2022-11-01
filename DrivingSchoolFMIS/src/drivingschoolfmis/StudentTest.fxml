@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="anchor" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="drivingschoolfmis.StudentTestController">
+   <children>
+      <BorderPane layoutX="78.0" layoutY="111.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <top>
+            <HBox alignment="CENTER" prefHeight="36.0" prefWidth="590.0" spacing="20.0" style="-fx-border-color: cadetblue; -fx-border-radius: 5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="titleLbl" style="-fx-border-color: transparent  cadetblue transparent transparent;" text="Label" textFill="CADETBLUE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="courseLbl" style="-fx-border-color: transparent  cadetblue transparent transparent;" text="Label" textFill="CADETBLUE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="categoryLbl" style="-fx-border-color: transparent  cadetblue transparent transparent;" text="Label" textFill="CADETBLUE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <VBox alignment="TOP_CENTER" prefHeight="340.0" prefWidth="204.0" spacing="20.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="9.0" top="13.0" />
+               </padding>
+               <children>
+                  <Label prefHeight="19.0" prefWidth="61.0" text="Test form" textAlignment="CENTER" textFill="CADETBLUE" underline="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="fullNameTxt" disable="true" focusColor="BLACK" labelFloat="true" opacity="0.74" promptText="Full Name" style="-fx-background-color: #e0d8d8;" unFocusColor="WHITE">
+                     <padding>
+                        <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                     </padding>
+                  </JFXTextField>
+                  <ComboBox fx:id="testComboBox" opacity="0.74" prefHeight="25.0" prefWidth="194.0" promptText="Test Taken" style="-fx-background-color: #e0d8d8;" />
+                  <HBox alignment="CENTER" prefHeight="30.0" prefWidth="196.0" spacing="35.0" style="-fx-background-color: #e0d8d8; -fx-background-radius: 7;">
+                     <children>
+                        <JFXRadioButton fx:id="passRadioBtn" opacity="0.74" text="Pass" />
+                        <JFXRadioButton fx:id="failRadioBtn" opacity="0.74" text="Fail" textAlignment="JUSTIFY" />
+                     </children>
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                  </HBox>
+                  <DatePicker fx:id="dateTxt" promptText="Date of Test" style="-fx-border-color: white;" />
+                  <HBox prefHeight="17.0" prefWidth="194.0" style="-fx-background-color: grey;">
+                     <children>
+                        <JFXButton buttonType="RAISED" onAction="#saveBtnOnAction" prefHeight="18.0" prefWidth="194.0" text="Save" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" fontSmoothingType="LCD" glyphName="SAVE" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets right="3.0" top="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </left>
+         <center>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="testTable" prefHeight="343.0" prefWidth="386.0">
+                     <contextMenu>
+                        <ContextMenu>
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#deleteTest" text="Delete" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

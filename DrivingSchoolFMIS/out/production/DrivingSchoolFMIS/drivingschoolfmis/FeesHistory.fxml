@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="drivingschoolfmis.FeesHistoryController">
+   <children>
+      <BorderPane layoutX="149.0" layoutY="122.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TableView fx:id="receiptsTable" onMouseClicked="#tableOnMouseClickedAction" prefHeight="283.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </BorderPane.margin>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#exploreReceipt" text="Explore Receipt" />
+                      <MenuItem mnemonicParsing="false" onAction="#deleteAction" text="Delete" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER_RIGHT" prefHeight="31.0" prefWidth="600.0" spacing="3.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="31.0" prefWidth="157.0">
+                     <children>
+                        <Label prefHeight="19.0" prefWidth="91.0" text="Discount:">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="discountLbl" prefHeight="17.0" prefWidth="101.0" text="Label">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="31.0" prefWidth="157.0">
+                     <children>
+                        <Label prefHeight="19.0" prefWidth="91.0" text="Govt Fee:">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="govtLbl" prefHeight="17.0" prefWidth="101.0" text="Label">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="31.0" prefWidth="157.0">
+                     <children>
+                        <Label prefHeight="19.0" prefWidth="91.0" text="Total :">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalFeesLbl" prefHeight="17.0" prefWidth="101.0" text="Label">
+                           <font>
+                              <Font size="11.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="31.0" prefWidth="157.0">
+                     <children>
+                        <Label prefHeight="19.0" prefWidth="89.0" text="Paid:">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalPaidLbl" prefHeight="17.0" prefWidth="120.0" text="Label">
+                           <font>
+                              <Font size="11.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="31.0" prefWidth="157.0">
+                     <children>
+                        <Label prefHeight="19.0" prefWidth="57.0" text="Balance:" textFill="#f24545">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="balanceLbl" prefHeight="17.0" prefWidth="84.0" text="Label" textFill="#f24545">
+                           <font>
+                              <Font size="11.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </bottom>
+         <top>
+            <VBox prefHeight="64.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="36.0" prefWidth="590.0" spacing="20.0" style="-fx-border-color: cadetblue; -fx-border-radius: 5;">
+                     <children>
+                        <Label fx:id="titleLbl" style="-fx-border-color: transparent  cadetblue transparent transparent;" text="Label" textFill="CADETBLUE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets right="2.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="courseLbl" style="-fx-border-color: transparent  cadetblue transparent transparent;" text="Label" textFill="CADETBLUE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets right="2.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="categoryLbl" style="-fx-border-color: transparent  cadetblue transparent transparent;" text="Label" textFill="CADETBLUE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets right="2.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="courseFeeLbl" style="-fx-border-color: transparent  cadetblue transparent transparent;" text="Label" textFill="CADETBLUE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets right="2.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="29.0" prefWidth="600.0">
+                     <children>
+                        <TextField fx:id="filterTxt" onKeyReleased="#filterTxtOnKeyReleased" promptText="Search History">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <JFXButton buttonType="RAISED" onAction="#recordPaymentAction" prefHeight="25.0" prefWidth="145.0" ripplerFill="#68e420" style="-fx-background-color: white;" text="Record Receipt" textFill="#027cff" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <FontAwesomeIcon fill="#027cff" glyphName="MONEY" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onAction="#printAction" prefHeight="25.0" prefWidth="92.0" ripplerFill="#68e420" style="-fx-background-color: white;" text="Report" textFill="#2a7b8a">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="#2a7b8a" glyphName="PRINT" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="2.0" top="4.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="2.0" right="2.0" />
+               </padding>
+            </VBox>
+         </top>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </BorderPane>
+   </children>
+</AnchorPane>

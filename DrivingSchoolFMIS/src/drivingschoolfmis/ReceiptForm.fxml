@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="drivingschoolfmis.ReceiptFormController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <top>
+            <HBox alignment="CENTER" prefHeight="36.0" prefWidth="590.0" spacing="20.0" style="-fx-border-color: cadetblue; -fx-border-radius: 5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="titleLbl" style="-fx-border-color: transparent  cadetblue transparent transparent;" text="Label" textFill="CADETBLUE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="courseLbl" style="-fx-border-color: transparent  cadetblue transparent transparent;" text="Label" textFill="CADETBLUE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="categoryLbl" style="-fx-border-color: transparent  cadetblue transparent transparent;" text="Label" textFill="CADETBLUE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <VBox fx:id="receiptBox" alignment="TOP_CENTER" prefHeight="344.0" prefWidth="258.0" spacing="20.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="9.0" top="13.0" />
+               </padding>
+               <children>
+                  <Label prefHeight="21.0" prefWidth="55.0" text="Receipt" textAlignment="CENTER" textFill="CADETBLUE" underline="true">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="fullNameTxt" disable="true" focusColor="BLACK" labelFloat="true" opacity="0.74" promptText="Received From" style="-fx-background-color: #e0d8d8;" unFocusColor="WHITE">
+                     <padding>
+                        <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                     </padding>
+                  </JFXTextField>
+                  <JFXTextField fx:id="amountTxt" focusColor="BLACK" labelFloat="true" opacity="0.74" promptText="Amount (MK)" style="-fx-background-color: #e0d8d8;" unFocusColor="WHITE">
+                     <padding>
+                        <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                     </padding>
+                  </JFXTextField>
+                  <ComboBox fx:id="bpoCombo" opacity="0.74" prefHeight="25.0" prefWidth="261.0" promptText="Payment for" style="-fx-background-color: #e0d8d8;" />
+                  <ComboBox fx:id="pmCombo" opacity="0.74" prefHeight="25.0" prefWidth="258.0" promptText="Payment Mode" style="-fx-background-color: #e0d8d8;" />
+                  <DatePicker fx:id="dateTxt" prefHeight="27.0" prefWidth="259.0" promptText="Date of Receipt" style="-fx-border-color: white;" />
+                  <JFXTextField fx:id="referenceNoTxt" focusColor="BLACK" labelFloat="true" opacity="0.74" prefHeight="27.0" prefWidth="254.0" promptText="Reference No." style="-fx-background-color: #e0d8d8;" unFocusColor="WHITE">
+                     <padding>
+                        <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                     </padding>
+                  </JFXTextField>
+                  <HBox prefHeight="17.0" prefWidth="194.0" style="-fx-background-color: dimgray;">
+                     <children>
+                        <JFXButton buttonType="RAISED" onAction="#saveBtnOnAction" prefHeight="25.0" prefWidth="608.0" text="Save" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" fontSmoothingType="LCD" glyphName="SAVE" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets right="3.0" top="5.0" />
+               </BorderPane.margin>
+            </VBox>
+         </left>
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: dimgray;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="354.0" prefWidth="300.0" spacing="5.0" style="-fx-background-color: grey;">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                     <children>
+                        <Label text="Course  Fee" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="courseFeeLbl" text="Discount" textFill="AQUA">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Government Fee" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="govtFeeLbl" text="Discount" textFill="AQUA">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Discount" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="discountLbl" text="Discount" textFill="AQUA">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="1.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="354.0" prefWidth="300.0" spacing="5.0" style="-fx-background-color: grey;">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                     <children>
+                        <Label text="Total Fees" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalFeesLbl" text="Discount" textFill="AQUA">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Paid" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="paidFeesLbl" text="Discount" textFill="AQUA">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Balance" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="balanceLbl" text="Discount" textFill="AQUA">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <JFXButton fx:id="historyBtn" alignment="BOTTOM_RIGHT" buttonType="RAISED" contentDisplay="CENTER" onAction="#paymentHistoryAction" prefHeight="24.0" prefWidth="158.0" ripplerFill="BLACK" style="-fx-background-color: #008293;" text="View Payment History" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Black" size="11.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="20.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="5.0" />
+               </BorderPane.margin>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

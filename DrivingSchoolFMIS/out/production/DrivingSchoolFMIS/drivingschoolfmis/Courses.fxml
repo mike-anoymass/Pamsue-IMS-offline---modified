@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="691.0" prefWidth="1155.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="drivingschoolfmis.CoursesController">
+   <children>
+      <GridPane layoutX="-3.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane id="anchor1" prefHeight="200.0" prefWidth="200.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <top>
+                        <Label fx:id="courseLbl" alignment="CENTER" prefHeight="20.0" prefWidth="902.0" text="Courses" textFill="#bf9e9e" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="7.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <left>
+                        <VBox alignment="CENTER" prefHeight="196.0" prefWidth="543.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 7;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="182.0" text="Course Registration Form" textFill="CADETBLUE" underline="true">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="31.0" prefWidth="423.0" spacing="25.0">
+                                 <children>
+                                    <JFXTextField fx:id="courseCodeTxt" focusColor="BLACK" labelFloat="true" opacity="0.74" prefHeight="27.0" prefWidth="114.0" promptText="Course code" style="-fx-background-color: #e0d8d8;" unFocusColor="WHITE">
+                                       <padding>
+                                          <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="courseNameTxt" focusColor="BLACK" labelFloat="true" opacity="0.74" prefHeight="27.0" prefWidth="206.0" promptText="Course name" style="-fx-background-color: #e0d8d8;" unFocusColor="WHITE">
+                                       <padding>
+                                          <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="govtFeeTxt" focusColor="BLACK" labelFloat="true" opacity="0.74" prefHeight="27.0" prefWidth="123.0" promptText="Government Fee" style="-fx-background-color: #e0d8d8;" unFocusColor="WHITE">
+                                       <padding>
+                                          <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </JFXTextField>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="28.0" prefWidth="253.0" spacing="5.0">
+                                 <children>
+                                    <JFXButton fx:id="saveBtn" buttonType="RAISED" onAction="#saveCourseAction" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Save" textFill="#4fbfbf">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="updateBtn" buttonType="RAISED" onAction="#updateCourseAction" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Update" textFill="#3854e0">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="deleteBtn" buttonType="RAISED" onAction="#deleteCourseAction" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Delete" textFill="#f20202">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                           </padding>
+                           <BorderPane.margin>
+                              <Insets right="5.0" />
+                           </BorderPane.margin>
+                        </VBox>
+                     </left>
+                     <center>
+                        <VBox prefHeight="196.0" prefWidth="680.0" spacing="7.0" BorderPane.alignment="CENTER_RIGHT">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="597.0">
+                                 <children>
+                                    <TextField fx:id="filterCoursesTxt" onKeyReleased="#coursesOnKeyReleasedAction" opacity="0.74" promptText="Search courses" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="courseTable" onKeyReleased="#courseTableOnKeyReleasedAction" onMouseClicked="#courseTableClickedAction" prefHeight="167.0" prefWidth="772.0">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem fx:id="refreshMenuItem" mnemonicParsing="false" onAction="#refreshCourseAction" text="Refresh" />
+                                          <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#deleteCourseAction" text="Delete" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="anchor2" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <left>
+                        <VBox alignment="CENTER" prefHeight="196.0" prefWidth="543.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 7;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="182.0" text="Category Registration Form" textFill="CADETBLUE" underline="true">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="31.0" prefWidth="423.0" spacing="25.0">
+                                 <children>
+                                    <JFXTextField fx:id="durationNameTxt" focusColor="BLACK" labelFloat="true" opacity="0.74" prefHeight="27.0" prefWidth="206.0" promptText="Category name" style="-fx-background-color: #e0d8d8;" unFocusColor="WHITE">
+                                       <padding>
+                                          <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="daysTxt" focusColor="BLACK" labelFloat="true" opacity="0.74" prefHeight="27.0" prefWidth="123.0" promptText="Days" style="-fx-background-color: #e0d8d8;" unFocusColor="WHITE">
+                                       <padding>
+                                          <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </JFXTextField>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="28.0" prefWidth="253.0" spacing="5.0">
+                                 <children>
+                                    <JFXButton fx:id="saveBtn1" buttonType="RAISED" onAction="#saveDurationAction" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Save" textFill="#4fbfbf">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="updateBtn1" buttonType="RAISED" onAction="#updateDurationAction" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Update" textFill="#3854e0">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="deleteBtn1" buttonType="RAISED" onAction="#deleteCourseTypeAction" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Delete" textFill="#f20202">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                           </padding>
+                           <BorderPane.margin>
+                              <Insets right="5.0" />
+                           </BorderPane.margin>
+                        </VBox>
+                     </left>
+                     <top>
+                        <Label fx:id="courseTypeLbl" alignment="CENTER" prefHeight="17.0" prefWidth="532.0" text="Category" textFill="#bf9e9e" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="7.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <VBox prefHeight="196.0" prefWidth="680.0" spacing="7.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="597.0">
+                                 <children>
+                                    <TextField fx:id="filterCoursesTypeTxt" onKeyReleased="#categoryFilter" opacity="0.74" promptText="Search categories" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="courseTypeTable" onKeyReleased="#courseDurationOnKeyReleased" onMouseClicked="#courseTypeTableOnMouseClickedAction" prefHeight="160.0" prefWidth="377.0">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem fx:id="refreshMenuItem1" mnemonicParsing="false" onAction="#refreshCourseTypeAction" text="Refresh" />
+                                          <MenuItem fx:id="deleteMenuItem1" mnemonicParsing="false" onAction="#deleteCourseTypeAction" text="Delete" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane id="anchor2" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <left>
+                        <VBox alignment="CENTER" prefHeight="196.0" prefWidth="543.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 7;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="182.0" text="Course Category Form" textFill="CADETBLUE" underline="true">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="31.0" prefWidth="423.0" spacing="25.0">
+                                 <children>
+                                    <ComboBox fx:id="courseCombo" opacity="0.74" prefHeight="25.0" prefWidth="159.0" promptText="Select course" style="-fx-background-color: #e0d8d8;" />
+                                    <ComboBox fx:id="durationCombo" opacity="0.74" prefHeight="25.0" prefWidth="148.0" promptText="Select category" style="-fx-background-color: #e0d8d8;" />
+                                    <JFXTextField fx:id="amountTxt" focusColor="BLACK" labelFloat="true" opacity="0.74" prefHeight="27.0" prefWidth="123.0" promptText="Fees amount" style="-fx-background-color: #e0d8d8;" unFocusColor="WHITE">
+                                       <padding>
+                                          <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </JFXTextField>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="28.0" prefWidth="253.0" spacing="5.0">
+                                 <children>
+                                    <JFXButton buttonType="RAISED" onAction="#saveCcAction" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Save" textFill="#4fbfbf">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="updateBtn11" buttonType="RAISED" onAction="#updateCourseInfoAction" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Update" textFill="#3854e0">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                           </padding>
+                           <BorderPane.margin>
+                              <Insets right="5.0" />
+                           </BorderPane.margin>
+                        </VBox>
+                     </left>
+                     <center>
+                        <VBox prefHeight="196.0" prefWidth="680.0" spacing="7.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="597.0">
+                                 <children>
+                                    <TextField fx:id="filterCcTxt" onKeyReleased="#ccOnKeyReleasedAction" opacity="0.74" promptText="Search course categories" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="ccDurationTable" onKeyReleased="#ccOnKeyRelAction" onMouseClicked="#ccTableMouseClicked" prefHeight="187.0" prefWidth="679.0">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem fx:id="refreshMenuItem11" mnemonicParsing="false" onAction="#refreshCourseInfoAction" text="Refresh" />
+                                          <MenuItem fx:id="deleteMenuItem11" mnemonicParsing="false" onAction="#deleteCourseInfoAction" text="Delete" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </center>
+                     <top>
+                        <Label fx:id="courseInfoLbl" alignment="CENTER" prefHeight="17.0" prefWidth="532.0" text="Courses And Their Categories" textFill="#bf9e9e" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="7.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

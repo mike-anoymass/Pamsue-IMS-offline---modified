@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="ancho" fx:id="ancho" prefHeight="642.0" prefWidth="1234.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="drivingschoolfmis.StudentsController">
+   <children>
+      <BorderPane layoutX="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox alignment="TOP_CENTER" prefHeight="53.0" prefWidth="1234.0" spacing="15.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="1227.0" style="-fx-background-color: cadetblue;" text="Students" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="1209.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="filtersTxt" onKeyReleased="#studentsFilterOnKeyReleased" prefHeight="25.0" prefWidth="153.0" promptText="Search Students" />
+                        <ComboBox fx:id="filterCombo" onAction="#filterByAction" opacity="0.74" prefHeight="25.0" prefWidth="183.0" promptText="Filter By" />
+                        <Label fx:id="loadingTxt" alignment="CENTER" prefHeight="17.0" prefWidth="346.0" text="Status" textFill="#8d7878">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="studentLbl" alignment="CENTER" prefHeight="19.0" prefWidth="183.0" style="-fx-border-color: cadetblue;" text="Label" textFill="#57574e">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIcon fill="RED" glyphName="REFRESH" onMouseClicked="#refreshActionOnMouseClicked" size="1.2em" />
+                        <HBox alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="523.0" spacing="10.0">
+                           <children>
+                              <JFXButton id="addStudentBtn" fx:id="addStudentBtn" buttonType="RAISED" onAction="#addNewStudent" ripplerFill="#6f6666" style="-fx-background-color: white; -fx-border-radius: 300;">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="BLUE" glyphName="PLUS" size="1.2em" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="exportBtn" buttonType="RAISED" onAction="#exportAction" prefHeight="25.0" prefWidth="167.0" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Export List to Excel" textFill="#4fbfbf">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#4fbfbf" fontSmoothingType="LCD" glyphName="TABLE" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="deleteBtn" buttonType="RAISED" onAction="#deleteStudent" prefHeight="25.0" prefWidth="114.0" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Delete" textFill="#f20202">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="RED" glyphName="TRASH" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </VBox>
+         </top>
+         <center>
+            <TableView id="table" fx:id="studentTable" onKeyReleased="#studentsTableOnKeyReleasedAction" onMouseClicked="#studentTableOnMouseClickedAction" prefHeight="514.0" prefWidth="777.0" styleClass="tableview" BorderPane.alignment="CENTER">
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#addNewStudent" text="Add " />
+                        <MenuItem mnemonicParsing="false" onAction="#editStudent" text="Edit" />
+                        <MenuItem mnemonicParsing="false" onAction="#exploreStudent" text="Explore student" />
+                        <MenuItem mnemonicParsing="false" onAction="#exploreTest" text="Explore test" />
+                        <MenuItem mnemonicParsing="false" onAction="#recordFeesAction" text="Record Fees Payment" />
+                        <MenuItem mnemonicParsing="false" onAction="#viewFeesAction" text="View Payment Details" />
+                        <MenuItem fx:id="refreshBtn2" mnemonicParsing="false" onAction="#refreshAction" text="Refresh" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="AnchorPane" prefHeight="333.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="drivingschoolfmis.SettlementController">
+   <top>
+      <HBox fx:id="formHbox" alignment="CENTER" prefHeight="41.0" prefWidth="495.0" spacing="30.0" style="-fx-border-color: cadetblue; -fx-border-radius: 10;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="amountTxt" promptText="Enter Amount" />
+            <Button mnemonicParsing="false" onAction="#pay" text="Pay Back" />
+         </children>
+      </HBox>
+   </top>
+   <right>
+      <BorderPane prefHeight="292.0" prefWidth="348.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox alignment="CENTER" prefHeight="19.0" prefWidth="425.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Payment History">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="5.0" />
+         </padding>
+         <center>
+            <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#print" text="Print All" />
+                        <MenuItem mnemonicParsing="false" onAction="#delete" text="Delete Selected" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu></TableView>
+         </center>
+      </BorderPane>
+   </right>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="268.0" prefWidth="145.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="131.0" text="Loan Details">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="loanFor" disable="true" labelFloat="true" opacity="0.63" promptText="Loan for" />
+            <JFXTextField fx:id="acquiredOn" disable="true" labelFloat="true" opacity="0.63" promptText="Loan Acquired On" />
+            <JFXTextField fx:id="amount" disable="true" labelFloat="true" opacity="0.63" promptText="Loan Amounting to" />
+            <JFXTextField fx:id="balanceTxt" disable="true" labelFloat="true" opacity="0.63" promptText="Balance" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="6.0" />
+         </padding>
+      </VBox>
+   </left>
+   <padding>
+      <Insets bottom="2.0" left="2.0" right="2.0" top="5.0" />
+   </padding>
+</BorderPane>
